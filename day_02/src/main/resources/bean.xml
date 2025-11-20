@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="student1" class="com.coder.bathStudent.Student">
+        <property name="name" value="张三"></property>
+        <property name="gender" value="男"></property>
+    </bean>
+    <bean id="student2" class="com.coder.bathStudent.Student">
+        <property name="name" value="李四"></property>
+        <property name="gender" value="男"></property>
+    </bean>
+    <bean id="student3" class="com.coder.bathStudent.Student">
+        <property name="name" value="王五"></property>
+        <property name="gender" value="女"></property>
+    </bean>
+    <bean id="student4" class="com.coder.bathStudent.Student">
+        <property name="name" value="赵六"></property>
+        <property name="gender" value="男"></property>
+    </bean>
+
+    <bean id="bathManage" class="com.coder.bathStudent.Bath">
+        <property name="student">
+            <list>
+                <ref bean="student1"></ref>
+                <ref bean="student2"></ref>
+                <ref bean="student3"></ref>
+                <ref bean="student4"></ref>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="card1" class="com.coder.library.StudentCard">
+        <property name="name" value="张三"></property>
+        <property name="card" value="红色A类"></property>
+    </bean>
+    <bean id="card2" class="com.coder.library.StudentCard">
+        <property name="name" value="李四"></property>
+        <property name="card" value="蓝色A类"></property>
+    </bean>
+    <bean id="card3" class="com.coder.library.StudentCard">
+        <property name="name" value="王五"></property>
+        <property name="card" value="红色B类"></property>
+    </bean>
+    <bean id="card4" class="com.coder.library.StudentCard">
+        <property name="name" value="赵六"></property>
+        <property name="card" value="蓝色B类"></property>
+    </bean>
+
+    <bean id="libraryManage" class="com.coder.library.LibraryManage">
+        <property name="Card">
+            <list>
+                <ref bean="card1"></ref>
+                <ref bean="card2"></ref>
+                <ref bean="card3"></ref>
+                <ref bean="card4"></ref>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="grade" class="com.coder.grade.Grade">
+        <property name="scores">
+            <map>
+                <entry key="语文" value="80.0"></entry>
+                <entry key="英语" value="60.0"></entry>
+                <entry key="数学" value="55.0"></entry>
+                <entry key="地理" value="50.0"></entry>
+            </map>
+        </property>
+    </bean>
+</beans>

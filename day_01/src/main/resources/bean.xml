@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="student" class="com.coder.student.Student">
+        <property name="name" value="王同学"></property>
+        <property name="gender" value="男"></property>
+        <property name="age" value="20"></property>
+    </bean>
+    <bean id="studentDao1" class="com.coder.student.StudentDaoImpl1"></bean>
+    <bean id="studentDao2" class="com.coder.student.StudentDaoImpl2"></bean>
+    <bean id="studentService" class="com.coder.student.StudentService">
+        <property name="studentDao" ref="studentDao2"></property>
+    </bean>
+</beans>
