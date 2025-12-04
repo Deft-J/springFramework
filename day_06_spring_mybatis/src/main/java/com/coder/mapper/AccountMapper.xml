@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.coder.mapper.AccountMapper">
+    <!-- 新增帐户 -->
+    <insert id="saveAccount" parameterType="Account">
+        insert into account(account, password, coupon) values(#{account}, #{password}, #{coupon})
+    </insert>
+
+    <!-- 查询所有帐户 -->
+    <select id="selectAllAccount" resultType="Account">
+        select * from account
+    </select>
+
+    <!-- 登录验证 -->
+    <select id="login" resultType="Account">
+        select * from account where account=#{arg0} and password=#{arg1}
+    </select>
+
+    <!-- 更新点券 -->
+    <update id="updateCoupon" parameterType="Account">
+        update account set coupon=coupon+#{coupon} where account=#{account}
+    </update>
+
+</mapper>
